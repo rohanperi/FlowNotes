@@ -13,9 +13,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stupid_text"
-        android:id="@+id/textView"
-        android:layout_marginBottom="35dp"
+        android:id="@+id/textView4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="@string/Intro_Text"
+        android:layout_marginBottom="255dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
@@ -24,19 +25,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/button2"
         android:background="@null"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:text="@string/button" />
+        android:text="@string/button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="114dp"
-        android:id="@+id/textView4"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Intro_Text" />
+        android:text="@string/stupid_text"
+        android:id="@+id/textView"
+        android:layout_marginEnd="51dp"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignEnd="@+id/textView4" />
 
 </RelativeLayout>
