@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">FlowNotes</string>
-    <string name="stupid_text">Leggo World!</string>
+    <string name="stupid_text">Have an Account?</string>
+    <string name= "button"> Log In</string>
+    <string name="Intro_Text">Welcome to FlowNotes</string>
 </resources>
