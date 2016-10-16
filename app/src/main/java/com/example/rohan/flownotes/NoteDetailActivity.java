@@ -1,5 +1,6 @@
 package com.example.rohan.flownotes;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,15 +16,14 @@ public class NoteDetailActivity extends AppCompatActivity {
         createAndFragment();
     }
 
-    private void createAndFragment(){
+    private void createAndFragment() {
+
+        Intent intent = getIntent();
+        NoteActivity.FragmentToLaunch fragmentToLaunch = (NoteActivity.FragmentToLaunch) intent.getSerializableExtra(NoteActivity.NOTE_FRAGMENT_TO_LOAD_EXTRA);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        NoteViewFragment noteViewFragment = new NoteViewFragment();
-        fragmentTransaction.add(R.id.note_container, noteViewFragment, "NOTE_VIEW_FRAGMENT");
-
         fragmentTransaction.commit();
-
     }
 }

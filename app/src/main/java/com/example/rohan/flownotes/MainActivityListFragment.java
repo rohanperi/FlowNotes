@@ -5,11 +5,21 @@ import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.w3c.dom.Node;
+
 import java.util.ArrayList;
+
+import static com.example.rohan.flownotes.NoteActivity.FragmentToLaunch.EDIT;
+import static com.example.rohan.flownotes.NoteActivity.FragmentToLaunch.VIEW;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,16 +57,42 @@ public class MainActivityListFragment extends ListFragment {
 
         setListAdapter(noteAdapter);
 
+        registerForContextMenu(getListView());
     }
 
     @Override
     public void onListItemClick(ListView  l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        launchNoteDetailActivity(position);
+        launchNoteDetailActivity(NoteActivity.FragmentToLaunch.VIEW, position);
     }
 
-    private void launchNoteDetailActivity(int position) {
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater menuInflater = getActivity().getMenuInflater();
+        menuInflater.inflate(R.menu.long_press_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int rowPosition = info.position;
+
+        // returns id of whatever menu item selected
+        switch(item.getItemId()){
+            case R.id.edit:
+                launchNoteDetailActivity(NoteActivity.FragmentToLaunch.EDIT, rowPosition);
+                Log.d("Menu Clicks", "We pressed the button");
+                return true;
+        }
+
+        return super.onContextItemSelected(item);
+    }
+
+    private void launchNoteDetailActivity(NoteActivity.FragmentToLaunch ftl, int position) {
 
         Note note = (Note) getListAdapter().getItem(position);
         Intent intent = new Intent(getActivity(), NoteDetailActivity.class);
@@ -66,7 +102,15 @@ public class MainActivityListFragment extends ListFragment {
         intent.putExtra(NoteActivity.NOTE_CATEGORY_EXTRA, note.getCategory());
         intent.putExtra(NoteActivity.NOTE_ID_EXTRA, note.getId());
 
-        startActivity(intent);
-    }
+        switch (ftl) {
+            case VIEW:
+                intent.putExtra(NoteActivity.NOTE_FRAGMENT_TO_LOAD_EXTRA, NoteActivity.FragmentToLaunch.VIEW);
+                break;
+            case EDIT:
+                intent.putExtra(NoteActivity.NOTE_FRAGMENT_TO_LOAD_EXTRA, NoteActivity.FragmentToLaunch.EDIT);
+                break;
+        }
 
-}
+
+
+    }

@@ -24,4 +24,6 @@
     <!-- Rohan Merge Files -->
     <string name="home_title">Flow Notes</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_menu">Edit</string>
+    <string name="save_note_button">Save</string>
 </resources>
