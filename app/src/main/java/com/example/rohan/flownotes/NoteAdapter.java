@@ -52,7 +52,7 @@ public class NoteAdapter extends ArrayAdapter<Note> {
 
             // use set tag to remember our view holder which is holding our references to our widgets
             convertView.setTag(viewHolder);
-        }else{
+        } else {
             // we already have a view so just go to our  viewholder and grab the widgets from it.
             viewHolder = (ViewHolder) convertView.getTag();
         }
@@ -69,9 +69,6 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         // Now that we've modified the view to display appropriate data
         // return it so it will be displayed.
         return convertView;
-
-
-   return convertView;
 
     }
 

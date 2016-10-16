@@ -45,14 +45,14 @@ public class MainActivityListFragment extends ListFragment {
         */
 
         notes = new ArrayList<Note>();
-        notes.add(new Note("This is the body of the message", Note.Category.LOW));
-        notes.add(new Note("This is the body of the message", Note.Category.HIGH));
-        notes.add(new Note("This is the body of the message", Note.Category.MEDIUM));
-        notes.add(new Note("This is the body of the message", Note.Category.LOW));
-        notes.add(new Note("This is the body of the message", Note.Category.LOW));
-        notes.add(new Note("This is the body of the message", Note.Category.HIGH));
-        notes.add(new Note("This is the body of the message", Note.Category.LOW));
-        notes.add(new Note("This is the body of the message", Note.Category.MEDIUM));
+        notes.add(new Note("Hackathon Ideas: New rapid fire notes", Note.Category.HIGH));
+        notes.add(new Note("Learn Java", Note.Category.HIGH));
+        notes.add(new Note("This is an amazing website: http://google.com", Note.Category.HIGH));
+        notes.add(new Note("Call Alan", Note.Category.MEDIUM));
+        notes.add(new Note("Meet up with Abhishek!", Note.Category.MEDIUM));
+        notes.add(new Note(" Buy Groceries", Note.Category.LOW));
+        notes.add(new Note("Hand in School Project!", Note.Category.LOW));
+        notes.add(new Note("Call mom!", Note.Category.LOW));
 
         noteAdapter = new NoteAdapter(getActivity(), notes);
 
