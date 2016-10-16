@@ -60,6 +60,8 @@ public class MainActivityListFragment extends ListFragment {
 
         Note note = (Note) getListAdapter().getItem(position);
         Intent intent = new Intent(getActivity(), NoteDetailActivity.class);
+
+
         intent.putExtra(NoteActivity.NOTE_MESSAGE_EXTRA, note.getMessage());
         intent.putExtra(NoteActivity.NOTE_CATEGORY_EXTRA, note.getCategory());
         intent.putExtra(NoteActivity.NOTE_ID_EXTRA, note.getId());
