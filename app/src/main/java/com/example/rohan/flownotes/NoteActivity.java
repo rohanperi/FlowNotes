@@ -9,8 +9,8 @@ public class NoteActivity extends AppCompatActivity {
     public static final String NOTE_ID_EXTRA = "com.example.rohan.flownotes.Identifier";
     public static final String NOTE_MESSAGE_EXTRA = "com.example.rohan.flownotes.Message";
     public static final String NOTE_CATEGORY_EXTRA = "com.example.rohan.flownotes.Category";
-    public static final String NOTE_FRAGMENT_TO_LOAD_EXTRA = "com.stoneriver.noteboook.Fragment_To_Load";
-    
+    public static final String NOTE_FRAGMENT_TO_LOAD_EXTRA = "com.rohan.flownotes.Fragment_To_Load";
+
 
     public enum FragmentToLaunch{ VIEW, EDIT }
 

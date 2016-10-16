@@ -28,6 +28,7 @@ public class MainActivityListFragment extends ListFragment {
 
     private ArrayList<Note> notes;
     private NoteAdapter noteAdapter;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -43,7 +44,7 @@ public class MainActivityListFragment extends ListFragment {
 
         */
 
-        notes =  new ArrayList<Note>();
+        notes = new ArrayList<Note>();
         notes.add(new Note("This is the body of the message", Note.Category.LOW));
         notes.add(new Note("This is the body of the message", Note.Category.HIGH));
         notes.add(new Note("This is the body of the message", Note.Category.MEDIUM));
@@ -61,7 +62,7 @@ public class MainActivityListFragment extends ListFragment {
     }
 
     @Override
-    public void onListItemClick(ListView  l, View v, int position, long id) {
+    public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
         launchNoteDetailActivity(NoteActivity.FragmentToLaunch.VIEW, position);
@@ -76,13 +77,13 @@ public class MainActivityListFragment extends ListFragment {
     }
 
     @Override
-    public boolean onContextItemSelected(MenuItem item){
+    public boolean onContextItemSelected(MenuItem item) {
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int rowPosition = info.position;
 
         // returns id of whatever menu item selected
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.edit:
                 launchNoteDetailActivity(NoteActivity.FragmentToLaunch.EDIT, rowPosition);
                 Log.d("Menu Clicks", "We pressed the button");
@@ -110,8 +111,6 @@ public class MainActivityListFragment extends ListFragment {
                 intent.putExtra(NoteActivity.NOTE_FRAGMENT_TO_LOAD_EXTRA, NoteActivity.FragmentToLaunch.EDIT);
                 break;
         }
-
-
-
+        startActivity(intent);
     }
-//aaaaa
+}
