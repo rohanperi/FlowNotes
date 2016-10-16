@@ -1,6 +1,6 @@
 # FlowNotes
 
-FlowNotes is a new intuative take on storing your personal information and ideas. 
+FlowNotes is a new intuitive take on storing your personal information and ideas. 
 
 Created by:
 
