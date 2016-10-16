@@ -11,14 +11,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listItemNoteImg"
-        android:src="@drawable/q"
+        android:src="@drawable/ph"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="15dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="So this is how your text should look, it's not pretty but it should do"
+        android:id="@+id/listItemNoteBody"
+        android:layout_toEndOf="@+id/listItemNoteImg"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginTop="22dp"
 
         />
+
 
 
 
