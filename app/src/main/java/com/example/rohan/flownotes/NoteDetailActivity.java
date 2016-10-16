@@ -18,12 +18,26 @@ public class NoteDetailActivity extends AppCompatActivity {
 
     private void createAndAddFragment() {
 
+        Intent intent = getIntent();
+        NoteActivity.FragmentToLaunch fragmentToLaunch = (NoteActivity.FragmentToLaunch) intent.getSerializableExtra(NoteActivity.NOTE_FRAGMENT_TO_LOAD_EXTRA);
+
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        NoteViewFragment noteViewFragment = new NoteViewFragment();
-        setTitle("View Note");
-        fragmentTransaction.add(R.id.note_container, noteViewFragment, "NOTE_VIEW_FRAGMENT");
+        switch(fragmentToLaunch){
+            case EDIT:
+                NoteEditFragment noteEditFragment = new NoteEditFragment();
+                setTitle("Edit Note");
+                fragmentTransaction.add(R.id.note_container, noteEditFragment, "NOTE_EDIT_FRAGMENT");
+                break;
+            case VIEW:
+                NoteViewFragment noteViewFragment = new NoteViewFragment();
+                setTitle("View Note");
+                fragmentTransaction.add(R.id.note_container, noteViewFragment, "NOTE_VIEW_FRAGMENT");
+                break;
+        }
+
 
         fragmentTransaction.commit();
     }
