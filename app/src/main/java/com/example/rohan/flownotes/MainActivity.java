@@ -12,10 +12,6 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-import static android.R.attr.value;
-import static com.example.rohan.flownotes.R.id.activity_main;
-import static com.example.rohan.flownotes.R.layout.activity_login;
-
 public class MainActivity extends AppCompatActivity {
 
     Button button;
@@ -28,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_StartupPage);
         button = (Button) findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
