@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">FlowNotes</string>
-    <string name="stupid_text">Leggo World!</string>
+    <string name="stupid_text">Have an Account?</string>
+    <string name="button"> Log In</string>
+    <string name="Intro_Text">Welcome to FlowNotes</string>
+    <string name="app_logo">a</string>
+    <string name="desc">Note taking with flow.</string>
+    <string name="title_activity_login">Log in</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_Username">Username</string>
+    <string name="prompt_password">Password </string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This Username is invalid</string>
+    <string name="error_invalid_password">This password is too short </string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Rohan Merge Files -->
+    <string name="home_title">Flow Notes</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
