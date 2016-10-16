@@ -1,3 +1,5 @@
+//startuppage must be lowercase
+
 package com.example.rohan.flownotes;
 
 import android.content.Intent;
