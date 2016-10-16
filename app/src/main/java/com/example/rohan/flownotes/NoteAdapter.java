@@ -54,6 +54,7 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         }
 
 
+        return convertView;
     }
 
 }
