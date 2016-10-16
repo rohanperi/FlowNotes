@@ -12,7 +12,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class MainActivity extends AppCompatActivity {
+public class StartUpActivity extends AppCompatActivity {
 
     Button button;
     /**
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent iient= new Intent(MainActivity.this, LoginActivity.class);
+                Intent iient= new Intent(StartUpActivity.this, LoginActivity.class);
                 startActivity(iient);
             }
         });

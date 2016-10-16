@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-        mTextView = (AutoCompleteTextView) findViewById(R.id.text);
+        mTextView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent jjent= new Intent(LoginActivity.this, NoteActivity);
+                Intent jjent= new Intent(LoginActivity.this, NoteActivity.class);
                 startActivity(jjent);
                 attemptLogin();
             }
