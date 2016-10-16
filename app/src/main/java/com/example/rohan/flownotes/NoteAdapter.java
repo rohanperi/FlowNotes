@@ -17,6 +17,11 @@ import java.util.ArrayList;
 
 public class NoteAdapter extends ArrayAdapter<Note> {
 
+    public static class ViewHolder{
+        TextView note;
+        ImageView noteIcon;
+    }
+
     public NoteAdapter(Context context, ArrayList<Note> notes) {
 
         super(context, 0, notes);
@@ -28,33 +33,44 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         Note note = getItem(position);
 
         //create a new viewholder
-        RecyclerView.ViewHolder viewHolder;
+        ViewHolder viewHolder;
 
         // checks if an existing view is being reused, otherwise inflate a new view from custom row layout
         if (convertView == null) {
 
             // If we don't have a view that is being used to create one,
             // make sure you create a viewholder along with it ot save our view references too.
+            viewHolder = new ViewHolder();
 
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row, parent, false);
 
-            TextView noteText = (TextView) convertView.findViewById(R.id.listItemNoteBody);
-            ImageView noteIcon = (ImageView) convertView.findViewById(R.id.listItemNoteImg);
+            // set our views to our view holder so that we no longer have to go back and use
+            // find view by id every time we have a new row.
+            viewHolder.note = (TextView) convertView.findViewById(R.id.listItemNoteBody);
+            viewHolder.noteIcon = (ImageView) convertView.findViewById(R.id.listItemNoteImg);
 
 
-            // fill each new referenced view with data associated with the note it's referencing
-            noteText.setText(note.getMessage());
-            noteIcon.setImageResource(note.getAssociatedDrawable());
-
-            // Now that we've modified the view to display appropriate data
-            // return it so it will be displayed.
-            return convertView;
-
-
+            // use set tag to remember our view holder which is holding our references to our widgets
+            convertView.setTag(viewHolder);
+        }else{
+            // we already have a view so just go to our  viewholder and grab the widgets from it.
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
 
+        TextView noteText = (TextView) convertView.findViewById(R.id.listItemNoteBody);
+        ImageView noteIcon = (ImageView) convertView.findViewById(R.id.listItemNoteImg);
+
+
+        // fill each new referenced view with data associated with the note it's referencing
+        viewHolder.note.setText(note.getMessage());
+        viewHolder.noteIcon.setImageResource(note.getAssociatedDrawable());
+
+        // Now that we've modified the view to display appropriate data
+        // return it so it will be displayed.
         return convertView;
+
+
     }
 
 }
